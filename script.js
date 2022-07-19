@@ -8,6 +8,11 @@ container.addEventListener('drop', (e) => {
 });
 //------------------------------------------
 
+let currentColor;
+const colorPicker = document.getElementById(`colorPicker`);
+colorPicker.addEventListener(`input`, () => {
+    currentColor = colorPicker.value;
+});
 
 const sizePara = document.getElementById(`sizePara`);
 const sizeSlider = document.getElementById(`sizeSlider`);
@@ -40,12 +45,11 @@ function writeSquares() {
     squares.forEach((square) => {
         square.addEventListener(`mouseover`, (e) => {
             if (e.buttons === 1) {    
-                square.classList.add(`written`);
+                square.style.backgroundColor = colorPicker.value;
             } else return;
         })
         square.addEventListener(`mousedown`, () => {
-            square.classList.add(`written`);
+            square.style.backgroundColor = colorPicker.value;
         })
     })
 };
-    
