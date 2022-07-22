@@ -11,30 +11,41 @@
 <body>
     <h1>PixelArtr</h1>
     
-    <div class="sliderRatio">
-        <label for="sizeSlider">Canvas Size</label>
-        <input type="range" min="1" max="100" value="24" class="slider" id="sizeSlider">
-    </div>
-    <p class="menuTitle" id="sizePara"></h4>
+    <div class="controlPanel">
 
-        
-        <div class="bgColor">
-            <label for="bgColor">Background Color</label>
-            <input type="color" id="bgColor" value="#ffffff">
+        <div class="controlLeft">
+
+            
+            <label for="sizeSlider">Canvas Size</label>
+            <input type="range" min="2" max="100" value="24" class="slider" id="sizeSlider">
+            <p class="menuTitle" id="sizePara"></h4>
+            
+                
+            <div class="bgColor">
+                <label for="bgColor">Background Color</label>
+                <input type="color" id="bgColor" value="#ffffff">
+            </div>
+
         </div>
         
-        <div class="colorPicker">
-            <label for="colorPicker">Drawing color</label>
-            <input type="color" id="colorPicker" value="#333333">
+        <div class="controlRight">
+
+            <div class="colorPicker">
+                <label for="colorPicker">Drawing color</label>
+                <input type="color" id="colorPicker" value="#333333">
+            </div>
+            
+            <div class="eraser">
+                <button type="button" id="eraserButton">Eraser</button>
+            </div>
+            
+            <div class="gridButton">
+                <button type="button" id="gridToggle">Toggle Grid</button>
+            </div>
+
         </div>
-        
-        <div class="eraser">
-            <button type="button" id="eraserButton">Eraser</button>
-        </div>
-        
-        <div class="gridButton">
-            <button type="button" id="gridToggle">Toggle Grid</button>
-        </div>
+
+    </div>
 
         <!-- <div class="rainbowMode">
             <button type="button" id="rainbowButton">Rainbow Mode</button>
