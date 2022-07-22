@@ -4,24 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etch-a-sketch</title>
+    <title>PixelArtr</title>
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
 </head>
 <body>
-    <h1>Etch-a-sketch</h1>
-
-    <p id="colorTitle"></p>
-    <div class="colorPicker">
-        <input type="color" id="colorPicker">
-    </div>
+    <h1>PixelArtr</h1>
     
-
-    <p class="menuTitle" id="sizePara"></h4>
     <div class="sliderRatio">
+        <label for="sizeSlider">Canvas Size</label>
         <input type="range" min="1" max="100" value="24" class="slider" id="sizeSlider">
     </div>
+    <p class="menuTitle" id="sizePara"></h4>
 
+        
+        <div class="bgColor">
+            <label for="bgColor">Background Color</label>
+            <input type="color" id="bgColor" value="#ffffff">
+        </div>
+        
+        <div class="colorPicker">
+            <label for="colorPicker">Drawing color</label>
+            <input type="color" id="colorPicker" value="#333333">
+        </div>
+        
+        <div class="eraser">
+            <button type="button" id="eraserButton">Eraser</button>
+        </div>
+        
+        <div class="gridButton">
+            <button type="button" id="gridToggle">Toggle Grid</button>
+        </div>
+
+        <!-- <div class="rainbowMode">
+            <button type="button" id="rainbowButton">Rainbow Mode</button>
+        </div> -->
+        
+
+
+    
     <div class="container" id="container"></div>
+
 </body> 
 </html>
