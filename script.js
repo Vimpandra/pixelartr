@@ -11,14 +11,55 @@ container.addEventListener('drop', (e) => {
 const sizePara = document.getElementById(`sizePara`);
 const sizeSlider = document.getElementById(`sizeSlider`);
 
-sizePara.textContent = `${sizeSlider.value} x ${sizeSlider.value}`;
+sizePara.textContent = `Canvas size: ${sizeSlider.value} x ${sizeSlider.value}`;
 
 sizeSlider.addEventListener(`input`, () => {
-    sizePara.textContent = `${sizeSlider.value} x ${sizeSlider.value}`;
+    sizePara.textContent = `Canvas size: ${sizeSlider.value} x ${sizeSlider.value}`;
     container.textContent = ``;
     createSquares(sizeSlider.value);
     writeSquares();
+    resetColors();
 });
+
+// Background color picker
+const eraser = document.getElementById(`eraserButton`);
+
+const bgColor = document.getElementById(`bgColor`);
+const bgColorButton = document.getElementById(`bgColorButton`);
+
+eraser.style.backgroundColor = bgColor.value;
+
+bgColorButton.style.backgroundColor = bgColor.value;
+
+bgColor.addEventListener(`input`, () => {
+    bgColorButton.style.backgroundColor = bgColor.value;
+    eraser.style.backgroundColor = bgColor.value;
+    let squares = document.querySelectorAll(`.square`);
+    squares.forEach((square) => {
+        square.style.backgroundColor = bgColor.value;
+    })
+});
+
+// Drawing Color
+const writtingColorButton = document.getElementById(`writtingColorButton`);
+const colorPicker = document.getElementById(`colorPicker`);
+let currentColor = colorPicker.value;
+writtingColorButton.style.backgroundColor = colorPicker.value;
+
+colorPicker.addEventListener(`input`, () => {
+    currentColor = colorPicker.value;
+    writtingColorButton.style.backgroundColor = currentColor;
+});
+
+colorPicker.addEventListener(`click`, () => {
+    currentColor = colorPicker.value;
+    writtingColorButton.style.backgroundColor = currentColor;
+});
+
+// Eraser
+eraser.addEventListener(`click`, () => {
+    currentColor = bgColor.value;
+})
 
 // Grid Toggle
 const gridButton = document.getElementById(`gridToggle`);
@@ -26,29 +67,6 @@ gridButton.addEventListener(`click`, () => {
     let squares = document.querySelectorAll(`.square`);
     squares.forEach((square) => {
         square.classList.toggle(`grid`);
-    })
-});
-
-// Color Picker
-const colorPicker = document.getElementById(`colorPicker`);
-let currentColor = colorPicker.value;
-
-colorPicker.addEventListener(`input`, () => {
-    currentColor = colorPicker.value;
-});
-
-// Eraser
-const eraser = document.getElementById(`eraserButton`);
-eraser.addEventListener(`click`, () => {
-    currentColor = bgColor.value;
-})
-
-// Background color picker
-const bgColor = document.getElementById(`bgColor`);
-bgColor.addEventListener(`input`, () => {
-    let squares = document.querySelectorAll(`.square`);
-    squares.forEach((square) => {
-        square.style.backgroundColor = bgColor.value;
     })
 });
 
@@ -87,3 +105,10 @@ function writeSquares() {
         })
     })
 };
+
+function resetColors() {
+    bgColor.value = `#FFFFFF`
+    bgColorButton.style.backgroundColor = `#FFFFFF`;
+    eraser.style.backgroundColor = `#FFFFFF`;
+    currentColor = colorPicker.value;
+}

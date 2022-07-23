@@ -13,36 +13,46 @@
     
     <div class="controlPanel">
 
-        <div class="controlLeft">
+        <div class="controlBasic">
 
-            
-            <label for="sizeSlider">Canvas Size</label>
-            <input type="range" min="2" max="100" value="24" class="slider" id="sizeSlider">
-            <p class="menuTitle" id="sizePara"></h4>
-            
+            <div class="canvasSlider">
+                <label for="sizeSlider" id="sizePara"></label>
+                <input type="range" min="2" max="80" value="24" class="slider" id="sizeSlider">            
+            </div>
                 
-            <div class="bgColor">
-                <label for="bgColor">Background Color</label>
-                <input type="color" id="bgColor" value="#ffffff">
+            <div class="controlButton">
+                <label for="bgColor" class="labelButton">
+                    <div class="roundButton" id="bgColorButton">
+                        <input type="color" id="bgColor" value="#ffffff" class="colorInput">
+                    </div>Background<br>Color</label>
             </div>
 
         </div>
+
+        <div class="toolDivisor"></div>
         
-        <div class="controlRight">
+        <div class="controlTools">
 
-            <div class="colorPicker">
-                <label for="colorPicker">Drawing color</label>
-                <input type="color" id="colorPicker" value="#333333">
+            <div class="controlButton">
+                <label for="colorPicker" class="labelButton">
+                    <div class="roundButton" id="writtingColorButton">
+                        <input type="color" id="colorPicker" value="#333333" class="colorInput">
+                    </div>Drawing<br>color</label>
             </div>
             
-            <div class="eraser">
-                <button type="button" id="eraserButton">Eraser</button>
+            <div class="eraserTool">
+                <button type="button" id="eraserButton" class="roundButton"></button>
+                <label for="eraserButton">Eraser</label>
             </div>
             
-            <div class="gridButton">
-                <button type="button" id="gridToggle">Toggle Grid</button>
-            </div>
+        </div>
+            
+        <div class="controlExtra">
 
+            <button type="button" id="gridToggle" class="extraButton">Toggle Grid</button>
+            
+            <button type="button" id="exportButton" class="extraButton">Export PNG</button>
+            
         </div>
 
     </div>
