@@ -34,6 +34,7 @@ bgColorButton.style.backgroundColor = bgColor.value;
 bgColor.addEventListener(`input`, () => {
     bgColorButton.style.backgroundColor = bgColor.value;
     eraser.style.backgroundColor = bgColor.value;
+    currentColor = colorPicker.value;
     let squares = document.querySelectorAll(`.square`);
     squares.forEach((square) => {
         square.style.backgroundColor = bgColor.value;
