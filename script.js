@@ -37,6 +37,8 @@ bgColor.addEventListener(`input`, () => {
     bgColorButton.style.backgroundColor = bgColor.value;
     eraser.style.backgroundColor = bgColor.value;
     currentColor = colorPicker.value;
+    eraserDiv.classList.remove(`toolActive`);
+    drawingColorDiv.classList.add(`toolActive`);
     let squares = document.querySelectorAll(`.square`);
     squares.forEach((square) => {
         square.style.backgroundColor = bgColor.value;
@@ -46,22 +48,32 @@ bgColor.addEventListener(`input`, () => {
 // Drawing Color
 const writtingColorButton = document.getElementById(`writtingColorButton`);
 const colorPicker = document.getElementById(`colorPicker`);
+const drawingColorDiv = document.getElementById(`drawingColorDiv`);
+
 let currentColor = colorPicker.value;
 writtingColorButton.style.backgroundColor = colorPicker.value;
 
 colorPicker.addEventListener(`input`, () => {
     currentColor = colorPicker.value;
     writtingColorButton.style.backgroundColor = currentColor;
+    drawingColorDiv.classList.add(`toolActive`);
+    eraserDiv.classList.remove(`toolActive`);
 });
 
 colorPicker.addEventListener(`click`, () => {
     currentColor = colorPicker.value;
     writtingColorButton.style.backgroundColor = currentColor;
+    drawingColorDiv.classList.add(`toolActive`);
+    eraserDiv.classList.remove(`toolActive`);
 });
 
 // Eraser
-eraser.addEventListener(`click`, () => {
+let eraserDiv = document.getElementById(`eraserDiv`);
+
+eraserDiv.addEventListener(`click`, () => {
     currentColor = bgColor.value;
+    eraserDiv.classList.add(`toolActive`);
+    drawingColorDiv.classList.remove(`toolActive`);
 })
 
 // Grid Toggle
