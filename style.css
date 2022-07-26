@@ -135,7 +135,7 @@ h1 {
 
 .controlExtra {
     background-color: var(--lightGray);
-    width: 120px;
+    width: 122px;
     height: 124px;
     display: flex;
     flex-direction: column;
@@ -152,4 +152,11 @@ h1 {
     width: 90px;
     border-radius: 16px;
     cursor: pointer;
+    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.3);
+}
+
+.toggleActive {
+    background-color: white;
+    color: black;
+    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.3);
 }

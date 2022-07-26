@@ -19,6 +19,8 @@ sizeSlider.addEventListener(`input`, () => {
     createSquares(sizeSlider.value);
     writeSquares();
     resetColors();
+    gridButton.textContent = `Hide Grid`;
+    gridButton.classList.add(`toggleActive`);
 });
 
 // Background color picker
@@ -68,7 +70,13 @@ gridButton.addEventListener(`click`, () => {
     let squares = document.querySelectorAll(`.square`);
     squares.forEach((square) => {
         square.classList.toggle(`grid`);
-    })
+    });
+    gridButton.classList.toggle(`toggleActive`);
+    if (gridButton.textContent === `Hide Grid`) {
+        gridButton.textContent = `Show Grid`;
+    } else {
+        gridButton.textContent = `Hide Grid`;
+    }
 });
 
 // Rainbow Mode
