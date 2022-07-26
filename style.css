@@ -20,8 +20,15 @@ h1 {
     margin: 1rem;
 }
 
+.main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 .container {
-    box-shadow: 1px 1px 6px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.2);
     background-color: white;
     width: 500px;
     height: 500px;
@@ -43,7 +50,7 @@ h1 {
 .slider {
     -webkit-appearance: none;
     appearance: none;
-    width: 180px;
+    width: 160px;
     height: 8px;
     background-color: #131313;
     outline: none;
@@ -71,12 +78,17 @@ h1 {
 
 .controlPanel {
     background-color: var(--darkGray);
-    width: 500px;
-    height: 124px;
+    width: 200px;
+    height: 500px;
     display: flex;
-    color: white;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    color: white;
+    text-align: left;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 24px;
+    box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.2);    
 }
 
 .colorInput {
@@ -100,27 +112,10 @@ h1 {
     gap: 8px;
 }
 
-.controlBasic {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    gap: 16px;
-    margin: 16px;
-    width: 180px;
-}
-
 .toolDivisor {
-    width: 2px;
-    height: 96px;
+    width: 160px;
+    height: 2px;
     background-color: var(--lightGray);
-}
-
-.controlTools {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin: 16px;
-    gap: 12px;
 }
 
 .eraserTool {
@@ -135,24 +130,29 @@ h1 {
 
 .controlExtra {
     background-color: var(--lightGray);
-    width: 122px;
-    height: 124px;
+    width: 200px;
+    height: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    gap: 24px;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: -20px;
+    align-self: flex-end;
 }
 
 .extraButton {
     background-color: var(--darkGray);
     color: white;
     border: none;
-    padding: 8px;
-    width: 90px;
-    border-radius: 16px;
+    padding: 12px;
+    width: 120px;
+    border-radius: 24px;
     cursor: pointer;
     box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.3);
+    font-size: 14px;
 }
 
 .toggleActive {

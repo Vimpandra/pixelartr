@@ -11,10 +11,11 @@
 <body>
     <h1>PixelArtr</h1>
     
-    <div class="controlPanel">
-
-        <div class="controlBasic">
-
+    <div class="main">
+        
+    
+        <div class="controlPanel">
+        
             <div class="canvasSlider">
                 <label for="sizeSlider" id="sizePara"></label>
                 <input type="range" min="2" max="80" value="24" class="slider" id="sizeSlider">            
@@ -26,13 +27,9 @@
                         <input type="color" id="bgColor" value="#ffffff" class="colorInput">
                     </div>Background<br>Color</label>
             </div>
-
-        </div>
-
-        <div class="toolDivisor"></div>
         
-        <div class="controlTools">
-
+            <div class="toolDivisor"></div>
+            
             <div class="controlButton">
                 <label for="colorPicker" class="labelButton">
                     <div class="roundButton" id="writtingColorButton">
@@ -44,27 +41,21 @@
                 <button type="button" id="eraserButton" class="roundButton"></button>
                 <label for="eraserButton">Eraser</label>
             </div>
+                
             
-        </div>
-            
-        <div class="controlExtra">
-
-            <button type="button" id="gridToggle" class="extraButton toggleActive">Hide Grid</button>
-            
-            <button type="button" id="exportButton" class="extraButton">Export PNG</button>
-            
-        </div>
-
-    </div>
-
-        <!-- <div class="rainbowMode">
-            <button type="button" id="rainbowButton">Rainbow Mode</button>
-        </div> -->
+                
+            <div class="controlExtra">
         
-
-
-    
-    <div class="container" id="container"></div>
+                <button type="button" id="gridToggle" class="extraButton toggleActive">Hide Grid</button>
+                
+                <button type="button" id="exportButton" class="extraButton">Export PNG</button>
+                
+            </div>
+        
+        </div>
+        
+        <div class="container" id="container"></div>
+    </div>
 
 </body> 
 </html>
